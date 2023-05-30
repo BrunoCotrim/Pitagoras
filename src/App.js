@@ -1,25 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import BotaoEsp from './Componentes/botoes/BotaoEsp';
+import Menu from './Componentes/Menu_Start/Menu';
+import GameBox from './Componentes/botoes/maingame';
+import CardPergunta from './Componentes/Core/CardPergunta';
 
 function App() {
+const estatico = false
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+     <div className="App">
+    {/* <BotaoEsp>Titulo</BotaoEsp> */}
+    {/* <Menu/> */}
+    {/* <GameBox></GameBox> */}
+    <CardPergunta></CardPergunta>
+  
     </div>
-  );
+
+    );
 }
 
 export default App;

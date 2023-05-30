@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Carta Animada</title>
+    <style>
+      .carta {
+        position: relative;
+        width: 200px;
+        height: 300px;
+        perspective: 1000px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .frente, .tras {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: blue;
+        border: 2px solid black;
+        border-radius: 10%;
+        backface-visibility: hidden;
+        transition: transform 1s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .tras {
+        transform: rotateY(180deg);
+        background-color: yellow;
+      }
+
+      .carta:hover .frente {
+        transform: rotateY(-180deg);
+      }
+
+      .carta:hover .tras {
+        transform: rotateY(0deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="carta">
+      <div class="frente">
+        Frente da carta
+      </div>
+      <div class="tras">
+        Conteudo da carta
+      </div>
+    </div>
+  </body>
+</html>

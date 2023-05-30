@@ -1,0 +1,82 @@
+.menu {
+    position: relative;
+    width: 450px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transition: 1.2s;
+    color: black;
+}
+
+.frente, .tras{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    backface-visibility: hidden;
+}
+
+.frente{
+    background-color: cadetblue;
+}
+
+.tras{
+    background-color: beige;
+    transform: rotateY(180deg);
+}
+
+#start {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+#start:hover {
+    background-color: rgb(224, 224, 224);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.menu.girar{
+    transform: rotateY(180deg);
+}
+
+#nameInput{
+    width: 70%;
+    height: 15%;
+    margin-bottom: 5px;
+}
+
+.confirm{
+    margin-top: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    width: 45%;
+    height: 40px;
+}
+
+.confirm:hover {
+    background-color: rgb(193, 212, 190);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#ok{
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+#cancelar{
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+#cancelar:hover {
+    background-color: rgb(212, 190, 190);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#case1{
+    flex-direction: row;
+    width: 70%;
+}
