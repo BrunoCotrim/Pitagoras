@@ -21,12 +21,14 @@ const CardResposta = (props) => {
 const CardPergunta = () => {
 
     const [isShaking, setShaking] = useState(false);
+    const [adicional, adicionarTempo] = useState(0);
 
     const escolhaCerta = () => {
         console.log("escolhacerta");
     }
     const escolhaErrada = () =>{
         setShaking(true);
+        adicionarTempo(50);
     }
     const fimAnimacao = () =>{
         setShaking(false);
@@ -37,8 +39,8 @@ const CardPergunta = () => {
         <div className={`Card ${isShaking ? 'shake' : ''}`}
         onAnimationEnd={fimAnimacao}>
             <div className='Card_Titulo'>
-                <div><Contador/></div>
-                <h2>Título da Carta</h2>
+                <div><Contador adicional={adicional}/></div>
+                <h1>Título da Carta</h1>
                 <div>X</div>
             </div>
             <div className='Card_Pergunta'>

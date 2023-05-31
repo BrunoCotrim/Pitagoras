@@ -1,9 +1,9 @@
 .Card{
-    border: double 5px rgba(0, 0, 0, 0);
+    border: double 10px rgba(0, 0, 0, 0);
     width: 60vw;
     height: 70vh;
     display: grid;
-    grid-template-rows: 1fr 2fr 2fr;
+    grid-template-rows: 2fr 3fr 4fr;
     background-color: rgba(245, 245, 220, 0.87);
     border-radius: 15px;
     box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.459);
@@ -13,16 +13,18 @@
 }
 
 .Card_Titulo{
-    border: solid 1px rgb(197, 0, 0); 
+    /* border: solid 1px rgb(197, 0, 0);  */
     display: grid;
     align-items: center;
     align-content: center;
+    justify-content: center;
+    justify-items: center;
     grid-template-columns: 1fr 4fr 1fr;  
 }
 
-.Card_Titulo h2{
+.Card_Titulo h1{
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.459);
-    border: solid 1px rgb(197, 0, 0); 
+    /* border: solid 1px rgb(197, 0, 0);  */
 }
 
 .Card_Pergunta{
@@ -30,11 +32,12 @@
 }
 
 .Card_Resposta{
-    border: solid 1px rgb(16, 0, 238);
+    /* border: solid 1px rgb(16, 0, 238); */
     display: flex;
     flex-wrap: wrap;
     justify-items: center;
     justify-content: center;
+    margin-bottom: 5px;
 }
 
 .shake {
