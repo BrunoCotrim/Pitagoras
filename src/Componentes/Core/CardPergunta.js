@@ -1,7 +1,7 @@
 import Contador from '../Diversos/Contador';
 import './CardPergunta.css';
 import './CardResposta.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 const CardResposta = (props) => {
@@ -28,11 +28,17 @@ const CardPergunta = () => {
     }
     const escolhaErrada = () =>{
         setShaking(true);
-        adicionarTempo(50);
+        adicionarTempo(300);
     }
     const fimAnimacao = () =>{
         setShaking(false);
     }
+
+    useEffect(() => {
+        adicionarTempo(0);
+    },[adicional]);
+
+
 
  
     return(

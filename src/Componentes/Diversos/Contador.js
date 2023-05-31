@@ -8,29 +8,24 @@ const Contador = (props) => {
 
     useEffect(() => {
         let intervalo;
-        console.log('valor', adicional); 
         if(contando){
             intervalo = setInterval(() => {
-                updateTimer((valorAntes) => valorAntes + 1 + adicional);
+                updateTimer((valorAntes) => valorAntes + 1);
             },100);
         }
         return () => {
             clearInterval(intervalo);
         };
-    },[contando, props.adicional])
+    },[contando])
+
 
     useEffect(() => {
-        
-        if (props.adicional !== adicional) {
-            adicionarTempo(props.adicional);
-            console.log('chaaaange adicional: ', adicional);
-            console.log('chaaaange props: ', props.adicional);
-        }
-        if (adicional !== 0) {
-          updateTimer((valorAntes) => valorAntes + adicional);
-          adicionarTempo(0);
-        }
-      }, [props.adicional]);
+        adicionarTempo(props.adicional);
+        console.log("adicional", adicional);
+        updateTimer(timer+adicional);
+    },[props.adicional]);
+
+
 
 
     const LigarDesligar = () => setContando(!contando);
