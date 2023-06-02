@@ -15,8 +15,8 @@ const estatico = false
     {/* <BotaoEsp>Titulo</BotaoEsp> */}
     {/* <Menu/> */}
     {/* <GameBox></GameBox> */}
-    <CardPergunta></CardPergunta>
     {/* <Contador></Contador> */}
+    <CardPergunta></CardPergunta>
   
     </div>
 

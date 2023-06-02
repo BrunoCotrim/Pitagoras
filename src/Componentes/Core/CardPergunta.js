@@ -47,7 +47,7 @@ const CardPergunta = () => {
             <div className='Card_Titulo'>
                 <div><Contador adicional={adicional}/></div>
                 <h1>Título da Carta</h1>
-                <div>X</div>
+                <div className='Botao_Fechar'></div>
             </div>
             <div className='Card_Pergunta'>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed ullamcorper lectus. Nulla vel libero tincidunt, semper urna id, commodo nisl? </p>

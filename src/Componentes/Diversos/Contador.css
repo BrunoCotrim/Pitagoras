@@ -1,11 +1,11 @@
 .timer-container {
-    background-color: rgba(240, 248, 255, 0.548);
+    /* background-color: rgba(240, 248, 255, 0.548); */
     display: flex;
     flex-direction: column; 
     padding: 10px;
     margin: 10px; 
     font-weight: bold;
-    border: solid 1px black;
+    /* border: solid 1px black; */
     border-radius: 8%;
     box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.514);
 

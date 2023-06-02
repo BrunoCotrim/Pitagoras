@@ -19,7 +19,7 @@
     align-content: center;
     justify-content: center;
     justify-items: center;
-    grid-template-columns: 1fr 4fr 1fr;  
+    grid-template-columns: 1fr 5fr 1fr;  
 }
 
 .Card_Titulo h1{
@@ -28,7 +28,11 @@
 }
 
 .Card_Pergunta{
-    border: solid 1px rgb(230, 255, 6);
+    /* border: solid 1px rgb(230, 255, 6); */
+    padding: 5px;
+}
+
+.Card_Pergunta p{
 }
 
 .Card_Resposta{
@@ -57,4 +61,23 @@
       transform: translateX(10px);
       background-color: rgba(255, 0, 0, 0.5);
     }
+  }
+
+  .Botao_Fechar{
+    font-weight: bold;
+    background-color: red;
+    color: white;
+    box-shadow: inset 1px 2px 8px rgba(0, 0, 0, 0.459);
+    border-radius: 50%;
+    border: solid 1px black;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    width: 24px;
+    height: 24px;
+  }
+
+  .Botao_Fechar:hover{
+    box-shadow: -1px -2px 8px rgba(255, 63, 63, 0.671);
   }
