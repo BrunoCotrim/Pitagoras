@@ -2,7 +2,7 @@
 import './Botao_esp.css';
 import React, { useState } from 'react';
 
- const BotaoEsp = props => {
+ const BotaoEsp = (props) => {
   const [conclusao, setConclusao] = useState(props.conclusao || 'O / X');
   const [dificuldade, setDificuldade] = useState(props.dificuldade || 'Diff');
   const [tempo, setTempo] = useState(props.tempo || 'Tempo');
@@ -10,11 +10,11 @@ import React, { useState } from 'react';
 
   return (
     <>
-    <div className="casa_pergunta">
-      <div className="front">
+    <div className="casa_pergunta" onClick={props.onClick}>
+      <div className="front" >
         {props.children}
       </div>
-      <div className="back">
+      <div className="back" >
         <p>{conclusao}</p>
         <p>{dificuldade}</p>
         <p>{props.children}</p>
@@ -23,6 +23,7 @@ import React, { useState } from 'react';
     </div>
     <div className={fade}></div>
     </>
+
   );
 }
 

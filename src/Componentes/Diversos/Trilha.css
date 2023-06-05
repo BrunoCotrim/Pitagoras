@@ -1,0 +1,27 @@
+.caixa_trail{
+    border: solid 2px rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    height: 80vh;
+}
+
+.road{
+    border: solid 2px rgb(0, 0, 0);
+    height: 8%;
+}
+
+.node{
+    border: solid 2px rgb(0, 0, 0);
+    background-color: black;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    transition: 0.3s;
+}
+.node:hover{
+    border: solid 2px rgb(0, 255, 64);
+    background-color: rgb(0, 255, 64);
+    box-shadow: 0 0 6px rgba(0, 255, 64, 0.664);
+}

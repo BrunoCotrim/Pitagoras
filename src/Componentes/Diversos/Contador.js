@@ -3,8 +3,8 @@ import './Contador.css';
 
 const Contador = (props) => {
     const [timer, updateTimer] = useState(0);
-    const [contando, setContando] = useState(false);
-    const [adicional, adicionarTempo] = useState(props.adicional);
+    const [contando, setContando] = useState(false); //comecar com falso pois no load o valor inverte
+    const [penalidade, adicionarTempo] = useState(props.penalidade||0);
 
     useEffect(() => {
         let intervalo;
@@ -20,15 +20,19 @@ const Contador = (props) => {
 
 
     useEffect(() => {
-        adicionarTempo(props.adicional);
-        console.log("adicional", adicional);
-        updateTimer(timer+adicional);
-    },[props.adicional]);
+        adicionarTempo(props.penalidade); // pega o valor do pai a adicionar
+        updateTimer(timer+penalidade); // adiciona o valor
+    },[props.penalidade]);
 
-
-
+    useEffect(() => {
+        props.PescarTempo((valorAntes) => valorAntes + timer);
+    },[props.acerto]);
 
     const LigarDesligar = () => setContando(!contando);
+
+    useEffect(() => {
+        LigarDesligar();
+    },[props.acerto]);
 
 
 
@@ -36,7 +40,8 @@ const Contador = (props) => {
 
         <div className='timer-container'> 
         <div>Tempo</div>
-        <div onClick={LigarDesligar}>{`${Math.floor(timer/10)}.${timer % 10}`}</div>
+        <div>{`${Math.floor(timer/10)}.${timer % 10}`}</div>
+        {/* <div onClick={LigarDesligar}>{`${Math.floor(timer/10)}.${timer % 10}`}</div> */}
         </div>
     );
 }

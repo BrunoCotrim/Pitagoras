@@ -18,36 +18,52 @@ const CardResposta = (props) => {
 
 
 
-const CardPergunta = () => {
+const CardPergunta = (props) => {
 
     const [isShaking, setShaking] = useState(false);
-    const [adicional, adicionarTempo] = useState(0);
+    const [penalidade, setPenalizacao] = useState(0);
+    const [fade, setFade] = useState(props.fade || '');
+    const [tempoPerg, updateTempo] = useState(0);
+    const [acerto, definirAcerto] = useState(false); 
 
-    const escolhaCerta = () => {
+    // handlers de escolhas
+    const escolhaCerta = (resolve) => {
         console.log("escolhacerta");
+        definirAcerto(true); //sinaliza para buscar o valor do timer
+        
     }
+    
     const escolhaErrada = () =>{
-        setShaking(true);
-        adicionarTempo(300);
+        setShaking(true); // treme a tela
+        setPenalizacao(300); // adiciona valor na var para a filha
+
     }
     const fimAnimacao = () =>{
-        setShaking(false);
+        setShaking(false); // para de
     }
 
     useEffect(() => {
-        adicionarTempo(0);
-    },[adicional]);
+        setPenalizacao(0);
+    },[penalidade]); // sempre que penalidade mudar ela reseta
 
-
+    
+    const guardarTempo = (valor) =>{
+        updateTempo(valor);
+        props.feedTimer(valor);
+    }
 
  
     return(
         <div className={`Card ${isShaking ? 'shake' : ''}`}
         onAnimationEnd={fimAnimacao}>
             <div className='Card_Titulo'>
-                <div><Contador adicional={adicional}/></div>
-                <h1>Título da Carta</h1>
-                <div className='Botao_Fechar'></div>
+                <div><Contador 
+                acerto={acerto} 
+                penalidade={penalidade} 
+                PescarTempo={guardarTempo}
+                PararContagem={acerto} /></div>
+                <h1>{props.diff}</h1>
+                <div className='Botao_Fechar' onClick={props.fechar}></div>
             </div>
             <div className='Card_Pergunta'>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed ullamcorper lectus. Nulla vel libero tincidunt, semper urna id, commodo nisl? </p>

@@ -1,5 +1,20 @@
-.Container_Game{
+.Game_Box{
     border: solid 2px rgb(0, 0, 0);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Perguntas_Box{
+    position: absolute;
+    z-index: 10;
+}
+
+.Container_Game{
+    position: absolute;
+    border: solid 2px rgb(0, 0, 0);
+    position: static;
     display: flex;
     flex-direction: row;
     width: 90vw;
