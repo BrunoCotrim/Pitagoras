@@ -22,9 +22,12 @@ const CardPergunta = (props) => {
 
     const [isShaking, setShaking] = useState(false);
     const [penalidade, setPenalizacao] = useState(0);
-    const [fade, setFade] = useState(props.fade || '');
     const [tempoPerg, updateTempo] = useState(0);
+    const [cancelado , setCancelado] = useState(false); // fechar a janela
     const [acerto, definirAcerto] = useState(false); 
+    const [pergunta, setPergunta] = useState(props.pergAtual || 0); // PARA USO FUTURO SE NECESSARIO
+    const [Enunciados, setEnunc] = useState(props.enunciados || 0);
+    const [resp, setResp] = useState(props.resp || 0);
 
     // handlers de escolhas
     const escolhaCerta = (resolve) => {
@@ -37,6 +40,14 @@ const CardPergunta = (props) => {
         setShaking(true); // treme a tela
         setPenalizacao(300); // adiciona valor na var para a filha
 
+    }
+
+    const handleEscolha = (aval) => {
+        if (aval) {
+            escolhaCerta();
+        } else {
+            escolhaErrada();
+        }
     }
     const fimAnimacao = () =>{
         setShaking(false); // para de tremer
@@ -61,18 +72,24 @@ const CardPergunta = (props) => {
                 acerto={acerto} 
                 penalidade={penalidade} 
                 PescarTempo={guardarTempo}
-                PararContagem={acerto} /></div>
+                PararContagem={acerto || cancelado} /></div>
                 <h1>{props.diff}</h1>
                 <div className='Botao_Fechar' onClick={props.fechar}></div>
             </div>
             <div className='Card_Pergunta'>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed ullamcorper lectus. Nulla vel libero tincidunt, semper urna id, commodo nisl? </p>
+                <p>{Enunciados[0]}</p>
+                <h3>{Enunciados[1]}</h3>
             </div>
             <div className='Card_Resposta' >
-                <CardResposta onClick={escolhaCerta}>Resposta Certa</CardResposta>
+                {/* <CardResposta onClick={escolhaCerta}>Resposta Certa</CardResposta>
                 <CardResposta onClick={escolhaErrada}>Resposta Errada</CardResposta>
                 <CardResposta onClick={escolhaErrada}>Resposta Errada</CardResposta>
-                <CardResposta onClick={escolhaErrada}>Resposta Errada</CardResposta>
+                <CardResposta onClick={escolhaErrada}>Resposta Errada</CardResposta> */}
+
+                <CardResposta onClick={() => handleEscolha(resp[0][1])}>{resp[0][0]}</CardResposta>
+                <CardResposta onClick={() => handleEscolha(resp[2][1])}>{resp[2][0]}</CardResposta>
+                <CardResposta onClick={() => handleEscolha(resp[1][1])}>{resp[1][0]}</CardResposta>
+                <CardResposta onClick={() => handleEscolha(resp[3][1])}>{resp[3][0]}</CardResposta>
             </div>
 
         </div>

@@ -1,18 +1,8 @@
 import React, { useState } from 'react';
 
-function gerarNumeroAleatorio() {
-
-    console.log("pergunta gerada:", perg.pergunta);
-    console.log("pergunta gerada:", perg.pergunta);
-    console.log("resposta gerada:", perg.pergunta.respostas);
-    console.log("resposta gerada:", perg.pergunta.respostas[0]);
-    console.log("resposta gerada:", perg.pergunta.respostas[1]);
-    console.log("resposta gerada:", perg.pergunta.respostas[2]);
-    console.log("resposta gerada:", perg.pergunta.respostas[3]);
-}
 
 
-class PERGUNTA {
+export class PERGUNTA {
     constructor(diff) {
         this.a = this.gerarTermo(20,40);
         this.b = this.gerarTermo(1,20);
@@ -22,16 +12,19 @@ class PERGUNTA {
         
         this.facil = {
             soma:{
+                tipo:`Adição`,
                 enunciado:'Qual é o valor da soma dos termos?',
                 termos:`${this.a} + ${this.b}`,
                 respostas:[this.a + this.b],
             },
             multiplicacao:{
+                tipo:`Multiplicação`,
                 enunciado:'Qual é o resultado da multiplicação dos termos?',
                 termos:`${this.c} x ${this.d}`,
                 respostas:[this.c * this.d],
             },
             subtracao:{
+                tipo:`Subtração`,
                 enunciado:'Qual é o resultado da subtração dos termos?',
                 termos:`${this.a} - ${this.b}`,
                 respostas:[this.a - this.b],
@@ -40,16 +33,19 @@ class PERGUNTA {
 
         this.medio = {
             soma:{
+                tipo:`Adição`,
                 enunciado:'Qual é o valor da soma dos termos?',
                 termos:`${this.a} + ${this.b} + ${this.c} + ${this.d}`,
                 respostas:[this.a + this.b + this.c + this.d],
             },
             multiplicacao:{
+                tipo:`Multiplicação`,
                 enunciado:'Qual é o resultado da multiplicação dos termos?',
                 termos:`${this.c} x ${this.d} x ${3}`,
                 respostas:[this.c * this.d * 3],
             },
             subtracao:{
+                tipo:`Subtração`,
                 enunciado:'Qual é o resultado da subtração dos termos?',
                 termos:`${this.a} - ${this.c} - ${this.d}`,
                 respostas:[this.a - this.c - this.d],
@@ -58,16 +54,19 @@ class PERGUNTA {
 
         this.dificil = {
             soma:{
+                tipo:`Adição`,
                 enunciado:'Qual é o valor da soma dos termos?',
                 termos:`${this.a} + ${this.b + this.a} + ${this.c + this.b} + ${this.d} + ${this.a + this.d}`,
                 respostas:[this.a + this.b + this.a + this.c + this.b + this.d + this.a + this.d],
             },
             multiplicacao:{
+                tipo:`Multiplicação`,
                 enunciado:'Qual é o resultado da multiplicação dos termos?',
                 termos:`${this.c} x ${this.d} x ${this.a}`,
                 respostas:[this.c * this.d * this.a],
             },
             subtracao:{
+                tipo:`Subtração`,
                 enunciado:'Qual é o resultado da subtração dos termos?',
                 termos:`${this.a + this.a} - ${this.c * 2} - ${this.d}`,
                 respostas:[this.a + this.a - this.c * 2 - this.d],
@@ -75,21 +74,18 @@ class PERGUNTA {
         };
 
         switch (diff){
-            case 'facil':
+            case 'Fácil':
                 this.pergunta = this.gerarPergunta(this.facil);
                 break;
 
-            case 'medio':
+            case 'Médio':
                 this.pergunta = this.gerarPergunta(this.medio);
                 break;
 
-            case 'dificil':
+            case 'Difícil':
                 this.pergunta = this.gerarPergunta(this.dificil);
                 break;
         }
-
-        
-
 
 
     }
@@ -129,9 +125,13 @@ class PERGUNTA {
 }
 
 
-
-
 let perg = new PERGUNTA('facil');
+
+function gerarNumeroAleatorio() {
+    console.log("pergunta gerada:", perg);
+
+}
+
 const Pergunta = () => {
     return(
         <>

@@ -7,7 +7,7 @@ import CardPergunta from './Componentes/Core/CardPergunta';
 import Contador from './Componentes/Diversos/Contador';
 import Trilha from './Componentes/Diversos/Trilha';
 import Pergunta from './DB/Perguntas';
-import GeradorEnunciados from './Componentes/Core/CorePergunta';
+
 
 function App() {
 const estatico = false
@@ -17,12 +17,11 @@ const estatico = false
      <div className="App">
     {/* <BotaoEsp>Titulo</BotaoEsp>
     <Menu/> */}
-    {/* <GameBox></GameBox> */}
+    <GameBox></GameBox>
     {/* <Contador></Contador>
     <CardPergunta></CardPergunta> */}
     {/* <Trilha/> */}
     <Pergunta/>
-    {/* <GeradorEnunciados></GeradorEnunciados> */}
     </div>
 
     );
