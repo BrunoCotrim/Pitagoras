@@ -39,7 +39,7 @@ const CardPergunta = (props) => {
 
     }
     const fimAnimacao = () =>{
-        setShaking(false); // para de
+        setShaking(false); // para de tremer
     }
 
     useEffect(() => {
