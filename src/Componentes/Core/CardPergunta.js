@@ -22,6 +22,7 @@ const CardPergunta = (props) => {
 
     const [isShaking, setShaking] = useState(false);
     const [penalidade, setPenalizacao] = useState(0);
+    const [contadorPenalidade, setContadorPenal] = useState(1);
     const [tempoPerg, updateTempo] = useState(0);
     const [cancelado , setCancelado] = useState(false); // fechar a janela
     const [acerto, definirAcerto] = useState(false); 
@@ -38,8 +39,9 @@ const CardPergunta = (props) => {
     
     const escolhaErrada = () =>{
         setShaking(true); // treme a tela
-        setPenalizacao(300); // adiciona valor na var para a filha
-
+        setPenalizacao(300*contadorPenalidade); // adiciona valor na var para a filha
+        setContadorPenal(contadorPenalidade+1);
+    
     }
 
     const handleEscolha = (aval) => {
@@ -69,10 +71,9 @@ const CardPergunta = (props) => {
         onAnimationEnd={fimAnimacao}>
             <div className='Card_Titulo'>
                 <div><Contador 
-                acerto={acerto} 
+                acerto={acerto || cancelado} 
                 penalidade={penalidade} 
-                PescarTempo={guardarTempo}
-                PararContagem={acerto || cancelado} /></div>
+                PescarTempo={guardarTempo}/></div>
                 <h1>{props.diff}</h1>
                 <div className='Botao_Fechar' onClick={props.fechar}></div>
             </div>

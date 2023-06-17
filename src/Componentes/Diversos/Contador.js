@@ -12,6 +12,8 @@ const Contador = (props) => {
             intervalo = setInterval(() => {
                 updateTimer((valorAntes) => valorAntes + 1);
             },100);
+        } else{
+            props.PescarTempo((valorAntes) => valorAntes + timer); // se o contador parar atualiza o tempo geral
         }
         return () => {
             clearInterval(intervalo);
@@ -24,9 +26,6 @@ const Contador = (props) => {
         updateTimer(timer+penalidade); // adiciona o valor
     },[props.penalidade]);
 
-    useEffect(() => {
-        props.PescarTempo((valorAntes) => valorAntes + timer);
-    },[props.acerto]);
 
     const LigarDesligar = () => setContando(!contando);
 

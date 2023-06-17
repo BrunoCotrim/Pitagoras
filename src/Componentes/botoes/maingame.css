@@ -1,9 +1,13 @@
 .Game_Box{
-    border: solid 2px rgb(0, 0, 0);
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.459);
+    border-radius: 20px;
+    width: 90vw;
+    height: 90vh;
+    perspective: 1000px;
 }
 
 .Perguntas_Box{
@@ -11,22 +15,43 @@
     z-index: 10;
 }
 
-.Container_Game{
+.Container_Game, .Game_Over_Container{
     position: absolute;
-    border: solid 2px rgb(0, 0, 0);
-    position: static;
     display: flex;
-    flex-direction: row;
-    width: 90vw;
-    height: 90vh;
-    box-shadow: inset;
-    border-radius: 20px;
-    background: linear-gradient(to bottom, peachpuff, mistyrose);    
-    background-color: olive;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.459);
     align-items: center;
     justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    backface-visibility: hidden;
+    transition: transform 1s;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.459); 
+    background-color: olive;
 }
+
+.Container_Game{
+    flex-direction: row;
+    background: linear-gradient(to bottom, peachpuff, mistyrose);    
+    border: 3px solid rgb(212, 0, 0);
+}
+
+.Game_Over_Container{
+    flex-direction: column;
+    border: 3px solid rgb(0, 212, 81);
+    transform: rotateY(180deg);
+}
+
+.Container_Game_DONE .Container_Game {
+    transform: rotateY(180deg);
+}
+
+.Container_Game_DONE .Game_Over_Container {
+    transform: rotateY(360deg);
+}
+
+
 
 .Container_Left{
     /* border: solid 2px black; */

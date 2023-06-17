@@ -9,19 +9,17 @@ import Trilha from './Componentes/Diversos/Trilha';
 import Pergunta from './DB/Perguntas';
 
 
+
 function App() {
 const estatico = false
 
   return (
 
      <div className="App">
-    {/* <BotaoEsp>Titulo</BotaoEsp>
-    <Menu/> */}
-    <GameBox></GameBox>
-    {/* <Contador></Contador>
-    <CardPergunta></CardPergunta> */}
+    <Menu/>
+    {/* <GameBox></GameBox> */}
     {/* <Trilha/> */}
-    <Pergunta/>
+
     </div>
 
     );
