@@ -11,14 +11,18 @@ import Pergunta from './DB/Perguntas';
 
 
 function App() {
-const estatico = false
+  
+  const [NOME, setNome] = useState('');
+  
+  const catchName = (value) => { //Pega o nome do menu p enviar ao gamebox
+    setNome(value);
+  
+  }
 
   return (
 
-     <div className="App">
-    <Menu/>
-    {/* <GameBox></GameBox> */}
-    {/* <Trilha/> */}
+    <div className="App">
+      <Menu nome={catchName}><GameBox nome={NOME}></GameBox></Menu>
 
     </div>
 

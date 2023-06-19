@@ -8,7 +8,7 @@ const GameOverScreen = (props) => {
         <div className='GO_container'>
             <h1>Jornada concluída!</h1>
             <h2>Parabéns {props.user}, por chegar até aqui!</h2>
-            <h3>Seu tempo total foi de:</h3>
+            <h2>Seu tempo total foi de:</h2>
             <h1>{props.children}</h1>
         </div>
     );

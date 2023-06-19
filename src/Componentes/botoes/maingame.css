@@ -4,7 +4,6 @@
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.459);
-    border-radius: 20px;
     width: 90vw;
     height: 90vh;
     perspective: 1000px;
@@ -24,22 +23,20 @@
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 30px;
+    border-radius: 5px;
     backface-visibility: hidden;
     transition: transform 1s;
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.459); 
-    background-color: olive;
+    background: linear-gradient(to bottom,  rgb(74, 174, 231), rgb(32, 116, 150), rgb(24, 71, 90));
 }
 
 .Container_Game{
     flex-direction: row;
-    background: linear-gradient(to bottom, peachpuff, mistyrose);    
-    border: 3px solid rgb(212, 0, 0);
+    background: linear-gradient(to bottom,  rgb(131, 198, 236), rgb(103, 197, 235),rgb(74, 182, 224));
 }
 
 .Game_Over_Container{
     flex-direction: column;
-    border: 3px solid rgb(0, 212, 81);
     transform: rotateY(180deg);
 }
 
@@ -56,22 +53,27 @@
 .Container_Left{
     /* border: solid 2px black; */
     flex: 1;
-    height: 90%; 
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    max-width: 30vw; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.459);   
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 5px;
+    margin-left: 25px;
+    background-color: rgba(72, 127, 199, 0.568);
 }
 
 .Container_Right{
     /* border: solid 2px rgb(235, 0, 0); */
-    border-radius: 10px;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     flex: 1;
     height: 90%;
-    margin: 5px;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.699);
-    background-color: rgba(255, 214, 214, 0.822);
+    /* margin: 5px; */
+    /* box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.699); */
+    /* background-color: rgba(255, 214, 214, 0.822); */
 }
 
 .Container_Perguntas{
@@ -83,3 +85,32 @@
     justify-content: center;
 }
 
+.tempo-container{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.699);
+    background-color: rgba(72, 127, 199, 0.568);
+    border-radius: 12px;
+    padding: 5px;
+    margin: 5px; 
+    
+    
+}
+
+.Titulo_Tempo{
+    /* background-color: rgba(0, 0, 0, 0.171); */
+    padding: 2px;
+    /* color: white; */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.Tempo_T{
+    /* background-color: rgba(189, 188, 188, 0.342); */
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 38px;
+}
+
+.instruct{
+    max-height: 100;
+    overflow: auto;
+}

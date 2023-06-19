@@ -2,6 +2,7 @@ import Pergunta, { PERGUNTA } from '../../DB/Perguntas';
 import CardPergunta from '../Core/CardPergunta';
 import GameOverScreen from '../Core/GameOverScreen';
 import Contador from '../Diversos/Contador';
+import Instrucoes from '../Diversos/instrucoes';
 import BotaoEsp from './BotaoEsp';
 import './maingame.css';
 import React, { useState, useEffect } from 'react';
@@ -19,9 +20,9 @@ const GameBox = (props) => {
     const [ObjPergunta, setPergunta] = useState("");
     const [Respostas, setRespostas] = useState("");
     const [Enunciado, setEnunc] = useState([]);
-    const [currentQuestion, setCurrent] = useState(8);
+    const [currentQuestion, setCurrent] = useState(1);
     const [tempoIndiv, setTempoIndiv] = useState(0);
-    const [JOGADOR, setJogador] = useState(props.nome || "Jogador")
+    const [JOGADOR, setJogador] = useState(props.nome)
 
 
     // constantes para futuras personalizacoes se necessario
@@ -71,7 +72,7 @@ const GameBox = (props) => {
         // variavel mostrar && <componente> mostra o componente se ambos forem verdadeiros
     return(
         <div>
-            <button onClick={() => setGameOver(!GameOver)}>Virar</button>
+            {/* <button onClick={() => setGameOver(!GameOver)}>Virar</button> */}
         <div className={`Game_Box ${GameOver ? 'Container_Game_DONE' : ''}`}> 
         
             <div className={`Container_Game`}>
@@ -87,16 +88,13 @@ const GameBox = (props) => {
             </div>
 
             <div className='Container_Left'>
-                <div className='Container_Clock'>
-                <div className='timer-container'> 
-                <div>Tempo Total</div>
-                <div>{`${Math.floor(tempoTotal/10)}.${tempoTotal % 10}`}</div>
-                </div>
-                </div>
 
-                <div className='Container_Info'>
-                    <h2></h2>
+                <div className='tempo-container'> 
+                <div className='Titulo_Tempo'>Tempo Total</div>
+                <div className='Tempo_T'>{`${Math.floor(tempoTotal/10)}.${tempoTotal % 10} seg`}</div>
                 </div>
+                <div className='instruct'><Instrucoes/></div>
+
             </div>
 
             <div className='Container_Right'> 

@@ -4,14 +4,16 @@
     height: 70vh;
     display: grid;
     grid-template-rows: 2fr 3fr 4fr;
-    background-color: rgba(245, 245, 220, 0.87);
-    border-radius: 15px;
-    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.459);
+    background-color: rgb(235, 235, 235);
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.459);
     position: relative;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
+    font-size: 17px;
+    font-weight: bold;
 }
-
+ 
 .Card_Titulo{
     /* border: solid 1px rgb(197, 0, 0);  */
     display: grid;
@@ -20,11 +22,6 @@
     justify-content: center;
     justify-items: center;
     grid-template-columns: 1fr 6fr 1fr;  
-}
-
-.Card_Titulo h1{
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.459);
-    /* border: solid 1px rgb(197, 0, 0);  */
 }
 
 .Card_Pergunta{
@@ -52,17 +49,17 @@
     }
     10%, 30%, 50%, 70%, 90% {
       transform: translateX(-10px);
-      background-color: rgba(255, 0, 0, 0.562);
+      background-color: rgb(255, 0, 0);
     }
     20%, 40%, 60%, 80% {
       transform: translateX(10px);
-      background-color: rgba(255, 0, 0, 0.5);
+      background-color: rgb(255, 0, 0);
     }
   }
 
   .Botao_Fechar{
     font-weight: bold;
-    background-color: red;
+    background-color: rgb(182, 0, 0);
     color: white;
     box-shadow: inset 1px 2px 8px rgba(0, 0, 0, 0.459);
     border-radius: 50%;
@@ -76,5 +73,6 @@
   }
 
   .Botao_Fechar:hover{
-    box-shadow: -1px -2px 8px rgba(255, 63, 63, 0.671);
+    background-color: rgb(255, 0, 0);
+    box-shadow: -1px -1px 8px rgba(252, 77, 77, 0.671);
   }

@@ -70,6 +70,7 @@ function GeradorEnunciados() {
     ));
   };
 
+  //o retorno abaixo é apenas para teste
   return (
     <div>
       <h1>Gerador de Enunciados</h1>

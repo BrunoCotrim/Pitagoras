@@ -1,35 +1,42 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import { useState } from "react";
 import './Menu.css';
 
-function Menu(){
+function Menu(props){
     const [Girado , setGirado] = useState(false);
-    const [JOGADOR, setJogador] = useState("Jogador");
-    const [GAME, setGame] = useState(false);
+    const [GAME_START, setGame] = useState(false);
 
-    const handleName = (evento) =>{
-        setJogador(evento.target.value);
-    }
-    
+
+
     const girarMenu = () => {
     setGirado(!Girado);
-    console.log(JOGADOR);
-    console.log(GAME);
     };
 
+    const handleOK = () => { //envia o nome e manda o jogo iniciar
+        const inputValue = document.getElementById('nameInput').value;
+        props.nome(inputValue)
+        setGame(true);
+      }
+
+
+
+
     return(
-        <div className={`menu ${Girado ? 'girar' : ''}`}>
+        <div className="GAMEENV">
+        <div className={`${GAME_START ? 'fade' : `menu ${Girado ? 'girar' : ''}`}`}>
             <div className="frente">
                 <button id="start" onClick={girarMenu}>Começar</button>
             </div>
             <div className="tras">
                 <h2>Nome do Jogador</h2>
-                <input type="text" id="nameInput" value={JOGADOR} onChange={handleName}></input>
+                <input type="text" id="nameInput" placeholder="Nome do Jogador"></input>
                 <div id="case1">
-                    <button id="ok" className="confirm" onClick={() => setGame(true)}>OK</button>
+                    <button id="ok" className="confirm" onClick={handleOK}>OK</button>
                     <button id="cancelar" className="confirm" onClick={girarMenu}>Cancelar</button>
                 </div>
             </div>
+        </div>
+        {GAME_START && props.children}
         </div>
     )
 };

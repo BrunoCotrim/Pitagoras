@@ -38,8 +38,8 @@ const Contador = (props) => {
     return(
 
         <div className='timer-container'> 
-        <div>Tempo</div>
-        <div>{`${Math.floor(timer/10)}.${timer % 10}`}</div>
+        <div className='Titulo_Clock'>Tempo</div>
+        <div className='CLOCK'>{`${Math.floor(timer/10)}.${timer % 10}`}</div>
         {/* <div onClick={LigarDesligar}>{`${Math.floor(timer/10)}.${timer % 10}`}</div> */}
         </div>
     );

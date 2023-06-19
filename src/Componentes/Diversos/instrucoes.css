@@ -1,0 +1,25 @@
+li{
+    text-align: left;
+}
+
+.Instruct_Box{
+    margin-bottom: 0px;
+}
+
+/* Altera o estilo da barra de rolagem */
+::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #4fabcf00; /* Cor do fundo da trilha da barra de rolagem */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #61d0ec81; /* Cor do polegar (alça) da barra de rolagem */
+    border-radius: 5px;  
+}
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3852c48e; /* Cor do polegar (alça) da barra de rolagem em hover */
+  }
